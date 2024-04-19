@@ -79,9 +79,12 @@ export const getAllUsers = () => {
   return async (dispatch, _getstate) => {
     try {
       dispatch(fetchPendingAllUser());
-      const { data } = await axios.get(`http://35.198.239.246/all-user`, {
-        headers: { Authorization: `Bearer ${localStorage.access_token}` },
-      });
+      const { data } = await axios.get(
+        `http://chatapp-server.saintmichael.cloud/all-user`,
+        {
+          headers: { Authorization: `Bearer ${localStorage.access_token}` },
+        }
+      );
       dispatch(fetchSuccessAllUser(data));
     } catch (error) {
       dispatch(fetchReject(error.message));

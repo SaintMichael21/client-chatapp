@@ -46,9 +46,12 @@ export const getMessages = () => {
   return async (dispatch, _getstate) => {
     try {
       dispatch(fetchPendingMessages());
-      const { data } = await axios.get(`http://35.198.239.246/all-messages`, {
-        headers: { Authorization: `Bearer ${localStorage.access_token}` },
-      });
+      const { data } = await axios.get(
+        `http://chatapp-server.saintmichael.cloud/all-messages`,
+        {
+          headers: { Authorization: `Bearer ${localStorage.access_token}` },
+        }
+      );
       dispatch(fetchSuccessMessages(data));
     } catch (error) {
       dispatch(fetchReject(error.message));

@@ -33,9 +33,12 @@ export const fetchProfile = () => {
   return async (dispatch, _getstate) => {
     try {
       dispatch(fetchPending());
-      const { data } = await axios.get(`http://35.198.239.246/user`, {
-        headers: { Authorization: `Bearer ${localStorage.access_token}` },
-      });
+      const { data } = await axios.get(
+        `http://chatapp-server.saintmichael.cloud/user`,
+        {
+          headers: { Authorization: `Bearer ${localStorage.access_token}` },
+        }
+      );
       dispatch(fetchSuccess(data));
     } catch (error) {
       dispatch(fetchReject());
