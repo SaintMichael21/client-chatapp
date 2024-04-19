@@ -152,7 +152,7 @@ const ChatPage = ({ url, socket }) => {
 
   return (
     <>
-      <section className="min-h-dvh flex flex-col md:flex-row md:p-0 p-5">
+      <section className="max-h-dvh flex flex-col md:flex-row md:p-0 p-5">
         <div className="block md:hidden mb-5 justify-end text-end">
           <a
             onClick={fnLogOut}
@@ -180,7 +180,7 @@ const ChatPage = ({ url, socket }) => {
             })}
           </div>
         </div>
-        <div className="border border-indigo-400 rounded-3xl flex flex-col justify-center items-center w-full md:w-2/4 mx-auto md:mb-20 md:mt-10 shadow-2xl overflow-hidden">
+        <div className="border mb-14 border-indigo-400 rounded-3xl flex flex-col justify-center items-center w-full md:w-2/4 mx-auto md:mb-20 md:mt-10 shadow-2xl overflow-hidden">
           <div className="w-full h-full p-4 md:p-10 flex flex-col gap-2 overflow-scroll">
             {messages.map((el, index) => {
               return (
