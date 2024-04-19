@@ -6,9 +6,9 @@ import BaseLayout from "../layouts/BaseLayout";
 import ChatPage from "../views/ChatPage";
 import ProfilePage from "../views/ProfilePage";
 
-const url = `http://chatapp-server.saintmichael.cloud`;
+const url = `https://chatapp-server.saintmichael.cloud`;
 
-const socket = io("http://chatapp-server.saintmichael.cloud", {
+const socket = io("https://chatapp-server.saintmichael.cloud", {
   autoConnect: false,
 });
 

@@ -65,9 +65,12 @@ export const getUser = () => {
   return async (dispatch, _getstate) => {
     try {
       dispatch(fetchPendingUser());
-      const { data } = await axios.get(`http://35.198.239.246/user`, {
-        headers: { Authorization: `Bearer ${localStorage.access_token}` },
-      });
+      const { data } = await axios.get(
+        `https://chatapp-server.saintmichael.cloud/user`,
+        {
+          headers: { Authorization: `Bearer ${localStorage.access_token}` },
+        }
+      );
       dispatch(fetchSuccessUser(data));
     } catch (error) {
       dispatch(fetchReject(error.message));
@@ -80,7 +83,7 @@ export const getAllUsers = () => {
     try {
       dispatch(fetchPendingAllUser());
       const { data } = await axios.get(
-        `http://chatapp-server.saintmichael.cloud/all-user`,
+        `https://chatapp-server.saintmichael.cloud/all-user`,
         {
           headers: { Authorization: `Bearer ${localStorage.access_token}` },
         }

@@ -34,7 +34,7 @@ export const fetchProfile = () => {
     try {
       dispatch(fetchPending());
       const { data } = await axios.get(
-        `http://chatapp-server.saintmichael.cloud/user`,
+        `https://chatapp-server.saintmichael.cloud/user`,
         {
           headers: { Authorization: `Bearer ${localStorage.access_token}` },
         }

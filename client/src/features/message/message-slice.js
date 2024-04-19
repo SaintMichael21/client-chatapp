@@ -47,7 +47,7 @@ export const getMessages = () => {
     try {
       dispatch(fetchPendingMessages());
       const { data } = await axios.get(
-        `http://chatapp-server.saintmichael.cloud/all-messages`,
+        `https://chatapp-server.saintmichael.cloud/all-messages`,
         {
           headers: { Authorization: `Bearer ${localStorage.access_token}` },
         }
