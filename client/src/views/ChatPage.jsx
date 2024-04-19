@@ -41,6 +41,7 @@ const ChatPage = ({ url, socket }) => {
             headers: { Authorization: `Bearer ${localStorage.access_token}` },
           });
           resetTranscript();
+          setMessageSent("");
           setFile(undefined);
         } catch (error) {
           console.log(error);
