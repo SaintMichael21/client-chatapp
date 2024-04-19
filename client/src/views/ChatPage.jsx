@@ -25,7 +25,7 @@ const ChatPage = ({ url, socket }) => {
   const [messages, setMessages] = useState([]);
   const [loginUser, setLoginUser] = useState(undefined);
   const [divImage, setDivImage] = useState(false);
-  const [file, setFile] = useState({});
+  const [file, setFile] = useState(undefined);
 
   //ini submit message
   function handleSubmit(e) {
@@ -41,7 +41,7 @@ const ChatPage = ({ url, socket }) => {
             headers: { Authorization: `Bearer ${localStorage.access_token}` },
           });
           resetTranscript();
-          setFile({});
+          setFile(undefined);
         } catch (error) {
           console.log(error);
         }
@@ -63,7 +63,7 @@ const ChatPage = ({ url, socket }) => {
           );
           const link = data.data;
           socket.emit("message:new", link);
-          setFile("");
+          setFile(undefined);
         } catch (error) {
           console.log(error);
         }
@@ -129,7 +129,7 @@ const ChatPage = ({ url, socket }) => {
     };
   }, [transcript]);
   // console.log(loginUser, new Date());
-  console.log(messages);
+  // console.log(messages);
   //deleteMsg
   const fnDeleteMsg = async (e, id) => {
     try {
